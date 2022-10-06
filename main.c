@@ -4,15 +4,15 @@
 
 /**
  * O código abaixo executa operações simples de matemática como: Soma, Subtração, Divisão, Multiplicação, Raiz Quadrada e Potência.
- * O algorítmo abaixo foi desenvolvido por mim mesmo, Diego Vargas.
+ * Autor: Diego Vargas.
+ * Github: dsvargass
  */
 int main(int argc, char *argv[]) {
-    int option; //Utilizado para identificar se é raiz quadrada ou não.
-
     printf("Seja bem vindo(a) ao sistema de calculadora. \n Me chamo Diego Vargas e estudo Ciências de Dados pela Universidade UniLasalle, Matrícula: 202222025\n");
     
     //Esse while é necessário para permitir que o usuário faça várias operações sem precisar fechar o sistema e abrir novamente.
     while(true) {
+        int option; //Utilizado para identificar se é raiz quadrada ou não.
         char operator;
         double value1, value2;
         printf("========================================\n");
