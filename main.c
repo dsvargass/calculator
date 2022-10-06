@@ -8,14 +8,14 @@
  * Github: dsvargass
  */
 int main(int argc, char *argv[]) {
+    int option; //Utilizado para identificar se é raiz quadrada ou não.
+    char operator;
+    double value1, value2;
+    bool abortApplication = false;
     printf("Seja bem vindo(a) ao sistema de calculadora. \n Me chamo Diego Vargas e estudo Ciências de Dados pela Universidade UniLasalle, Matrícula: 202222025\n");
     
     //Esse while é necessário para permitir que o usuário faça várias operações sem precisar fechar o sistema e abrir novamente.
-    while(true) {
-        int option; //Utilizado para identificar se é raiz quadrada ou não.
-        char operator;
-        double value1, value2;
-        printf("========================================\n");
+    while(!abortApplication) {
         printf("Digite 1 para Raiz Quadrada ou Digite 2 para (soma, multiplicação, divisão e potenciação): ");
         scanf("%d", &option);
 
@@ -55,16 +55,16 @@ int main(int argc, char *argv[]) {
 
             switch(operator) {
                 case '+':
-                    printf("%.1lf + %.1lf = %.1lf", value1, value2, value1 + value2);
+                    printf("%.1lf + %.1lf = %.1lf\n", value1, value2, value1 + value2);
                     break;
                 case '-':
-                    printf("%.1lf - %.1lf = %.1lf", value1, value2, value1 - value2);
+                    printf("%.1lf - %.1lf = %.1lf\n", value1, value2, value1 - value2);
                     break;
                 case '*':
-                    printf("%.1lf * %.1lf = %.1lf", value1, value2, value1 * value2);
+                    printf("%.1lf * %.1lf = %.1lf\n", value1, value2, value1 * value2);
                     break;
                 case '/':
-                    printf("%.1lf / %.1lf = %.1lf", value1, value2, value1 / value2);
+                    printf("%.1lf / %.1lf = %.1lf\n", value1, value2, value1 / value2);
                     break;
                 case 'p':
                     printf("Informe o valor: ");
@@ -78,10 +78,12 @@ int main(int argc, char *argv[]) {
                 default:
                     printf("");
             }
-            printf("\n");
         } else {
-            printf("Opção inválida, tente novamente!\n");
-        }
+            printf("Por favor informe os valores de acordo com as opções solicitadas.");
+            abortApplication = true;
+        } 
+
+        printf("\n");
     }
 
     return 0;
